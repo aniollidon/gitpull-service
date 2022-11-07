@@ -7,8 +7,8 @@ Type=oneshot
 ExecStart=/etc/systemd/system/aniol_gitpull.sh
 StandardOutput=append:/var/log/aniol_gitpull.log
 StandardError=append:/var/log/aniol_gitpull.log
-User=user
-Group=user
+User=alumne
+Group=alumne
 
 [Install]
 WantedBy=multi-user.target
