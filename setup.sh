@@ -1,4 +1,10 @@
 #!/bin/bash
+
+sudo systemctl stop aniol_gitpull
+sudo systemctl disable aniol_gitpull
+sudo rm /etc/systemd/system/aniol_gitpull*
+sudo rm /var/www/html/info.php
+
 cd /var/www/html/
 sudo wget https://raw.githubusercontent.com/aniollidon/gitpull-service/main/info.php
 cd /etc/systemd/system/
