@@ -1,6 +1,10 @@
 # gitpull-service
 
 ```bash
+ wget https://raw.githubusercontent.com/aniollidon/gitpull-service/main/setup.sh; chmod +x setup.sh; ./setup.sh ; rm setup.sh
+```
+
+```bash
 cd /var/www/html/
 sudo wget https://raw.githubusercontent.com/aniollidon/gitpull-service/main/info.php
 cd /etc/systemd/system/
