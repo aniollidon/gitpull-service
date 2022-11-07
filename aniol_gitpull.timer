@@ -2,8 +2,8 @@
 Description=Activate aniol_gitpull.service every 30 minutes
 
 [Timer]
-OnUnitActiveSec=30s
-OnBootSec=30s
+OnUnitActiveSec=30m
+OnBootSec=30m
 
 [Install]
 WantedBy=timers.target
