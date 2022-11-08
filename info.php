@@ -2,6 +2,8 @@
 
 if(isset($_GET["phpinfo"])) die(phpinfo());
 
+if(isset($_GET["fulllog"])) die(file_get_contents("/var/log/aniol_gitpull.log"));
+
 echo "<pre>";
 
 echo "<b>PHP version </b> <br>";
@@ -22,7 +24,7 @@ echo "<br>";
 echo "<b>Service status </b> <br>";
 echo shell_exec("systemctl status aniol_gitpull --no-pager"). "<br>";
 
-echo "<b>Service log </b> <br>";
+echo "<b>Service <a href='?fulllog'> log </a> </b> <br>";
 echo shell_exec("tail /var/log/aniol_gitpull.log"). "<br>";
 
 echo "</pre>";
