@@ -4,7 +4,7 @@ Requires=aniol_gitpull.service
 
 [Timer]
 Unit=aniol_gitpull.service
-OnCalendar=*:0,30
+OnCalendar=*:0,5,15,25,35,45,55
 
 [Install]
 WantedBy=timers.target
