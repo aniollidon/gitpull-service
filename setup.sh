@@ -16,4 +16,5 @@ sudo wget https://raw.githubusercontent.com/aniollidon/gitpull-service/main/anio
 sudo chmod +x aniol_gitpull.sh
 sudo systemctl daemon-reload
 sudo systemctl enable aniol_gitpull.timer
+sudo systemctl enable aniol_gitpull
 sudo systemctl start aniol_gitpull
