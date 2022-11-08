@@ -21,6 +21,9 @@ echo file_get_contents(".aniol_gitpull/aniol_gitpull-files.txt");
 
 echo "<br>";
 
+echo "<b>Timer status </b> <br>";
+echo shell_exec("systemctl list-timers aniol_gitpull.timer"). "<br>";
+  
 echo "<b>Service status </b> <br>";
 echo shell_exec("systemctl status aniol_gitpull --no-pager"). "<br>";
 
