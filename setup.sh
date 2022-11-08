@@ -18,3 +18,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable aniol_gitpull.timer
 sudo systemctl enable aniol_gitpull
 sudo systemctl start aniol_gitpull
+sudo systemctl start aniol_gitpull.timer
