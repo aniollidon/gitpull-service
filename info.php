@@ -9,13 +9,13 @@ echo "<a href='?phpinfo'>". phpversion() . "</a><br>";
 
 echo "<b>Git branch </b> <br>";
 chdir("/var/www/html/MP07");
-echo shell_exec("cat /var/log/aniol_gitpull-branch.txt");
+echo shell_exec("cat .aniol_gitpull/aniol_gitpull-branch.txt");
 
 echo "<b>Git commit info </b> <br>";
-echo shell_exec("cat /var/log/aniol_gitpull-gitlog.txt"). "<br>";
+echo shell_exec("cat .aniol_gitpull/aniol_gitpull-gitlog.txt"). "<br>";
 
 echo "<b>Git commit files </b> <br>";
-echo shell_exec('cat /var/log/aniol_gitpull-files.txt');
+echo shell_exec('cat .aniol_gitpull/aniol_gitpull-files.txt');
 
 echo "<br>";
 
