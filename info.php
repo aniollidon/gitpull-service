@@ -9,6 +9,9 @@ echo "<pre>";
 echo "<b>PHP version </b> <br>";
 echo "<a href='?phpinfo'>". phpversion() . "</a><br>";
 
+echo "<b>MySql version </b> <br>";
+echo shell_exec("mysql --version"). "<br>";
+  
 echo "<b>Git branch </b> <br>";
 chdir("/var/www/html/MP07");
 echo file_get_contents(".aniol_gitpull/aniol_gitpull-branch.txt");
