@@ -10,6 +10,22 @@ function clean_lines($txt, $dellines = 0){
  return $txt;
 }
 
+function add_links($txt){
+ $out = "";
+ $lines = preg_split("/\r\n|\n|\r/", $txt);
+ foreach ($lines as $line){
+  $split = explode(" ", $line);
+  for ($i=0; $i<6; $i++){
+  	$date = array_shift($split);
+  	$out = $out . $date . " ";
+  } 
+ $url = implode($split);
+ $out = $out . "<a href='/MP07/$url'>$url</a><br>";
+ }
+ 
+ return $out;
+}
+
 if(isset($_GET["phpinfo"])) die(phpinfo());
 
 if(isset($_GET["fulllog"])) die("<pre>" . file_get_contents("/var/log/aniol_gitpull.log") . "</pre>");
@@ -29,8 +45,11 @@ echo clean_lines(file_get_contents(".aniol_gitpull/aniol_gitpull-branch.txt"))."
 echo "<b>Git commit info </b> <br>";
 echo clean_lines(file_get_contents(".aniol_gitpull/aniol_gitpull-gitlog.txt"))."<br><br>";
 
-echo "<b>Git commit files </b> <br>";
-echo clean_lines(file_get_contents(".aniol_gitpull/aniol_gitpull-files.txt"))."<br><br>";
+echo "<b>Files </b> <br>";
+echo "<a href='/MP07'>MP07</a><br><br>";
+
+echo "<b>Git Files </b> <br>";
+echo add_links(clean_lines(file_get_contents(".aniol_gitpull/aniol_gitpull-files.txt")))."<br>";
 
 echo "<b>Timer status </b> <br>";
 echo clean_lines(shell_exec("systemctl list-timers aniol_gitpull.timer"), 3)."<br><br>";
