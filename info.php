@@ -14,13 +14,11 @@ function add_links($txt){
  $out = "";
  $lines = preg_split("/\r\n|\n|\r/", $txt);
  foreach ($lines as $line){
-  $split = explode(" ", $line);
-  for ($i=0; $i<6; $i++){
-  	$date = array_shift($split);
-  	$out = $out . $date . " ";
-  } 
- $url = implode($split);
- $out = $out . "<a href='/MP07/$url'>$url</a><br>";
+  $split = explode("= ", $line);
+  $date = $split[0];
+  $out = $out . $date . " "; 
+  $url = $split[1];
+  $out = $out . "<a href='/MP07/$url'>$url</a><br>";
  }
  
  return $out;
